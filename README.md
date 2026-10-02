@@ -24,6 +24,18 @@ Plant facts come from the fact-checked plant profiles (university extension sour
    ```
 3. Scan the QR code with your phone's camera (iPhone) or with Expo Go (Android).
 
+## Put it on TestFlight
+
+You need a paid Apple Developer membership and a free [expo.dev](https://expo.dev) account. The build runs in Expo's cloud, so you don't need Xcode.
+
+```bash
+npm install
+npx eas-cli@latest login
+npx eas-cli@latest build --platform ios --profile production --auto-submit
+```
+
+Sign in with your Apple ID when it asks, and let it create the certificates. When the build finishes it's sent to App Store Connect. About 15 to 30 minutes later, open your app's TestFlight tab in App Store Connect, add yourself as an internal tester, and install it from the TestFlight app on your iPhone. The bundle ID is `com.mylittlegreenhouse.app`.
+
 ## For developers
 
 - Expo SDK 57 with Expo Router. Screens live in `src/app`, the scene and cards in `src/components`, plant and season content in `src/data`, and weather, storage and reminder logic in `src/lib`.
